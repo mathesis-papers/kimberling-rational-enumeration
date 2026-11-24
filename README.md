@@ -5,13 +5,15 @@
 For Kimberling's conjecture in the second Comments line of OEIS A371279, revision 11, and A371280, revision 10, we prove that the prescribed ordered construction enumerates the rationals in (0,1] exactly once, by extending the denominator descent for the BMO–Kepler closure lemma in Saha (2025, Solution 14) and Grytczuk–Kisielewicz–Przesławski (2026, Theorem 6.2). For 1 <= p <= q, the fraction p/q belongs to the first q generations, whose minimum is 2^(1-q); a continued-fraction digit sum gives a further generation bound. We determine every position's multiplicity in the related array A371353, correcting its prime-occurrence assertion and displayed examples. We also give short proofs of the linked rational-closure results of Kimberling and Moses (2014).
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.24489054](https://doi.org/10.5281/zenodo.24489054)
+- Concept DOI: [https://doi.org/10.5281/zenodo.24489053](https://doi.org/10.5281/zenodo.24489053)
 - License: CC-BY-4.0
 - Version: 2
 - Mathesis record: [kimberling-rational-enumeration](https://mathesis-omega-research.apps.chrono-ai.fun/papers/kimberling-rational-enumeration?version=2)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma. Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/kimberling-rational-enumeration?version=2
+Haobo Ma, Wenlin Zhang (2026). Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma. Mathesis, version 2. https://doi.org/10.5281/zenodo.24489054
 
 ## Statement progress
 

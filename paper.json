@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 79902,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "0a7a18763e811cf4190c298cc977fece4df49365adb433566edc07fd8aa1d32b",
+      "sha256": "0a7a18763e811cf4190c298cc977fece4df49365adb433566edc07fd8aa1d32b"
+    },
+    "source": {
+      "bytes": 13881,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "1c79126620dd6405871d3ea9881d58b2082f01ee9345e736b957bb57c49ebea1",
+      "sha256": "1c79126620dd6405871d3ea9881d58b2082f01ee9345e736b957bb57c49ebea1"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "For Kimberling's conjecture in the second Comments line of OEIS A371279, revision 11, and A371280, revision 10, we prove that the prescribed ordered construction enumerates the rationals in (0,1] exactly once, by extending the denominator descent for the BMO–Kepler closure lemma in Saha (2025, Solution 14) and Grytczuk–Kisielewicz–Przesławski (2026, Theorem 6.2). For 1 <= p <= q, the fraction p/q belongs to the first q generations, whose minimum is 2^(1-q); a continued-fraction digit sum gives a further generation bound. We determine every position's multiplicity in the related array A371353, correcting its prime-occurrence assertion and displayed examples. We also give short proofs of the linked rational-closure results of Kimberling and Moses (2014).",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "f3466406d8191001830cf15e84db4578d4891435",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/f3466406d8191001830cf15e84db4578d4891435/D5/S3/Arith/CounterSequences/KimberlingA371279.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 79902,
+      "sha256": "0a7a18763e811cf4190c298cc977fece4df49365adb433566edc07fd8aa1d32b",
+      "url": "/api/v1/collected-papers/kimberling-rational-enumeration/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-24T03:36:46.225133737Z",
+    "record": "kimberling-rational-enumeration",
+    "repository_name": "kimberling-rational-enumeration",
+    "source": {
+      "bytes": 13881,
+      "sha256": "1c79126620dd6405871d3ea9881d58b2082f01ee9345e736b957bb57c49ebea1",
+      "url": "/api/v1/collected-papers/kimberling-rational-enumeration/files/source?version=2"
+    },
+    "title": "Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-24T03:36:46.225133737Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "kimberling-rational-enumeration"
+  }
+}

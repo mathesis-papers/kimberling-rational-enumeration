@@ -1,0 +1,15 @@
+{
+  "id": "kimberling-rational-enumeration",
+  "revision": 2,
+  "problem_ids": ["oeis-a371279-a371280-rational-enumeration"],
+  "topic": "First-occurrence enumeration of rational numbers by x/(1+y)",
+  "title": "Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "For Kimberling's conjecture in the second Comments line of OEIS A371279, revision 11, and A371280, revision 10, we prove that the prescribed ordered construction enumerates the rationals in (0,1] exactly once, by extending the denominator descent for the BMO–Kepler closure lemma in Saha (2025, Solution 14) and Grytczuk–Kisielewicz–Przesławski (2026, Theorem 6.2). For 1 <= p <= q, the fraction p/q belongs to the first q generations, whose minimum is 2^(1-q); a continued-fraction digit sum gives a further generation bound. We determine every position's multiplicity in the related array A371353, correcting its prime-occurrence assertion and displayed examples. We also give short proofs of the linked rational-closure results of Kimberling and Moses (2014).",
+  "summary": "An application of the earlier BMO–Kepler closure lemma to Kimberling's prescribed binary order, with denominator and continued-fraction generation bounds, exact minima, corrected A371353 multiplicities, and attributed unary-closure corollaries.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/f3466406d8191001830cf15e84db4578d4891435/D5/S3/Arith/CounterSequences/KimberlingA371279.lean"
+}

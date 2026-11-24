@@ -1,0 +1,11 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "kimberling-rational-enumeration",
+  "version": 2,
+  "repository_url": "https://github.com/mathesis-papers/kimberling-rational-enumeration",
+  "site_url": "https://papers.trureturing.org/kimberling-rational-enumeration/",
+  "doi": null,
+  "reading": {},
+  "slides": [],
+  "visualizations": []
+}

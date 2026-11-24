@@ -1,0 +1,347 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks=true]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\title{Kimberling's rational-enumeration conjecture:\\an extension of the BMO--Kepler closure lemma}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{18 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For Kimberling's conjecture in the second Comments line of OEIS A371279,
+revision 11, and A371280, revision 10, we prove that the prescribed ordered
+construction enumerates the rationals in $(0,1]$ exactly once, by extending
+the denominator descent for the BMO--Kepler closure lemma in Saha
+(2025, Solution 14) and Grytczuk--Kisielewicz--Przes{\l}awski
+(2026, Theorem 6.2). For $1\le p\le q$, the fraction $p/q$ belongs
+to the first $q$ generations, whose minimum is $2^{1-q}$; a continued-fraction
+digit sum gives a further generation bound.
+We determine every position's multiplicity in the related array A371353,
+correcting its prime-occurrence assertion and displayed examples.
+We also give short proofs of the linked rational-closure results of
+Kimberling and Moses (2014).
+\end{abstract}
+
+\section{The construction and the result}
+Kimberling's two entries \cite{num,den} record the reduced numerators and
+denominators of the same ordered fraction list. Their shared conjecture is
+that every rational in $(0,1]$ appears exactly once:
+``Conjecture: every rational number in the interval (0,1] occurs exactly once in T.''
+The conjecture was inserted by Clark Kimberling in revision 3 of A371279
+(18 March 2024). The order matters:
+deleting repetitions from an unordered closure does not identify these
+integer sequences. We retain the entries' complete ordered construction.
+
+For a finite list $V$, let $\operatorname{first}(V)$ retain the first
+occurrence of each value, comparing rational numbers by equality. Write
+$V\Vert W$ for concatenation. If $V=(v_1,\ldots,v_m)$, define
+\[
+ B(V)=\left(\frac{v_i}{1+v_j}:i=1,\ldots,m;\ j=1,\ldots,m\right),
+\]
+where $i$ is the outer index and $j$ the inner index. Set
+\begin{equation}\label{eq:update}
+ U_1=(1),\qquad U_{n+1}=\operatorname{first}\bigl(U_n\Vert B(U_n)\bigr)
+ \quad(n\ge1).
+\end{equation}
+Let $g_1=(1)$ and let $g_{n+1}$ be the suffix appended to $U_n$ in
+\eqref{eq:update}. Thus $U_n=g_1\Vert\cdots\Vert g_n$; a generation may
+be regarded as an ordered list, not a set with an arbitrary ordering.
+The first three cumulative lists are
+\[
+ U_1=(1),\qquad U_2=(1,1/2),\qquad
+ U_3=(1,1/2,2/3,1/4,1/3).
+\]
+
+\begin{theorem}\label{thm:main}
+Every entry of every $U_n$ is a rational in $(0,1]$, and $U_n$ is a
+duplicate-free prefix of $U_{n+1}$. For all integers $1\le p\le q$,
+\begin{equation}\label{eq:bound}
+ p/q\in U_q.
+\end{equation}
+The minimum of $U_n$ is $2^{1-n}$, and every generation is nonempty.
+Consequently the infinite concatenation
+$g_1\Vert g_2\Vert\cdots$ is a bijective enumeration of $\Q\cap(0,1]$.
+Its reduced numerator and denominator lists are the constructions in
+A371279 and A371280, respectively.
+\end{theorem}
+
+The coverage mechanism is classical, not a new rational tree.
+Problem 5 of BMO Round 1, 2004/5 \cite{bmo}, asks whether the closure
+of $1/2$ under $z/(1+z)$ and $1/(1+z)$ contains all proper positive
+rationals. Saha \cite[Exercise 6.4 and Solution 14, pp.~16--18]{saha}
+gives the same inverse fractions and denominator induction used here.
+The same descent also appears in
+\cite[Theorem 6.2, p.~11]{recent}, released on 9 November 2026.
+Smolinsky \cite[Sections 5--6]{smolinsky} describes Kepler's tree rooted
+at $1/2$, with children $p/(p+q)$ and $q/(p+q)$ of $p/q$;
+Dekking \cite[Section 2.1, p.~3]{dekking} states its unique coverage of
+$\Q\cap(0,1)$. Kimberling and Moses
+\cite[Theorem 3.3 and Example 3.5, pp.~139--140]{trees} prove the linked
+unary-closure statements. Here the binary rule uses \emph{all} cumulative
+pairs, giving a different order from these trees. The gain is coverage
+of this specified binary order, a denominator bound, and position
+multiplicities; the classical unary-closure statements are reproved below.
+
+\section{Denominator descent}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+If $0<x,y\le1$, then $1+y>1$, so
+$0<x/(1+y)<x\le1$. Induction in \eqref{eq:update} proves the interval
+assertion. First-occurrence deletion makes each $U_n$ duplicate-free.
+Since its existing entries precede all pair values, no entry of $U_n$
+is removed or moved in forming $U_{n+1}$. This proves the prefix assertion.
+
+The binary rule contains the operations
+\begin{equation}\label{eq:unary}
+ L(z)=\frac{z}{1+z}\quad(x=y=z),\qquad
+ R(z)=\frac{1}{1+z}\quad(x=1,\ y=z).
+\end{equation}
+The value $1$ belongs to every cumulative list. Thus, if $z\in U_n$,
+both $L(z)$ and $R(z)$ belong to $U_{n+1}$, whether newly appended or
+already present.
+
+We prove \eqref{eq:bound} by strong induction on $q\ge1$, without
+requiring $p/q$ to be reduced. If $p=q$, the fraction is $1$, already
+in $U_1$ and hence in $U_q$. Otherwise $1\le p<q$, so $q\ge2$.
+If $2p\le q$, put $z=p/(q-p)$. Its displayed denominator satisfies
+$1\le q-p<q$, and $1\le p\le q-p$. The induction hypothesis puts
+$z$ in $U_{q-p}\subseteq U_{q-1}$. Therefore
+\[
+ L(z)=\frac{p/(q-p)}{1+p/(q-p)}=\frac pq\in U_q.
+\]
+If $2p>q$, put $z=(q-p)/p$. Here $1\le q-p<p<q$, so the induction
+hypothesis puts $z$ in $U_p\subseteq U_{q-1}$. Now
+\[
+ R(z)=\frac{1}{1+(q-p)/p}=\frac pq\in U_q.
+\]
+Every denominator in these identities is positive. These cases include
+$p/q=1/2$ through $L(1)=1/2$ and complete the induction.
+
+Let $m_n$ be the minimum of the finite nonempty list $U_n$.
+For any pair $x,y\in U_n$, the interval condition gives
+$x/(1+y)\ge m_n/2$. The pair $(m_n,1)$ attains $m_n/2$, below every
+old value. Hence $m_{n+1}=m_n/2$, so $m_n=2^{1-n}$ and every generation
+is nonempty.
+Hence $|U_n|\ge n$, and every positive position in the infinite
+concatenation is defined. Its values are distinct because the cumulative
+lists are duplicate-free prefixes. Given any $r\in\Q\cap(0,1]$, choose
+positive integers $p\le q$ with $r=p/q$. Equation~\eqref{eq:bound} puts
+$r$ in a finite prefix, proving surjectivity. Finally, taking the unique
+reduced numerator and positive denominator of each value gives precisely
+the two coordinate constructions stated in the entries.
+\end{proof}
+
+The same induction gives an explicit expression for each fraction as a
+word in $L$ and $R$ applied to $1$. Its length is at most $q-1$ for a
+displayed denominator $q$: every inverse step strictly decreases a
+positive integer denominator. This is a bound on a construction, not a
+claim that a fraction first appears in generation $q$.
+
+\begin{corollary}\label{cor:depth}
+Let $h(r)$ be the first generation containing $r\in\Q\cap(0,1]$.
+For integers $1\le p\le q$,
+\[
+ 2^{h(p/q)-1}\ge q/p,\qquad h(p/q)\le q.
+\]
+In particular $h(2^{-k})=k+1$ for every integer $k\ge0$.
+If $0<p<q$ is reduced and
+$p/q=[0;a_1,\ldots,a_s]$ is its finite simple continued fraction,
+with $a_i\ge1$ and $a_s\ge2$, then
+\[
+ h(p/q)\le a_1+\cdots+a_s.
+\]
+\end{corollary}
+\begin{proof}
+The minimum formula gives $p/q\ge2^{1-h(p/q)}$, and
+Theorem~\ref{thm:main} gives the upper bound.
+The value $2^{-k}$ is the minimum of $U_{k+1}$; the lower bound excludes
+every earlier list.
+For the last assertion, the Kepler-tree path from $1/2$ to $p/q$
+has $a_1+\cdots+a_s-2$ edges
+\cite[Lemma 3.1]{minkowski}. Since $1/2\in U_2$ and each edge is an
+$L$ or $R$ operation available at the next cumulative generation,
+the path gives the asserted bound.
+\end{proof}
+
+\section{Positions and the related array}
+Index the infinite fraction list from $1$, writing its $t$-th value as
+$f_t$. Let $P(r)$ be the unique positive position for which $f_{P(r)}=r$.
+In particular, $f_1=1$ and $P(1/2)=2$.
+For $k\ge2$, define the row
+\begin{equation}\label{eq:rows}
+ H_k=\bigl(P(1/k),P(2/k),\ldots,P((k-1)/k)\bigr),
+\end{equation}
+and set $H_1=(1)$, the exceptional first row displayed in A371353
+\cite{positions}. The fractions in a row need not be reduced before
+their positions are looked up. The examples in that entry and its
+Mathematica loop with $k\ge2$ have this meaning; at $k=1$ the loop
+itself produces an empty row rather than the displayed convention.
+
+\begin{corollary}\label{cor:positions}
+Let $t\ge2$, and write $f_t=a/b$ in lowest terms, so $1\le a<b$.
+The integer $t$ occurs exactly once in $H_k$ if $b$ divides $k$, and
+does not occur in $H_k$ otherwise. Its column in $H_{mb}$ is $ma$.
+It therefore occurs $\lfloor K/b\rfloor$ times among $H_1,\ldots,H_K$,
+and infinitely many times in the whole array. The value $1$ occurs
+only in the exceptional row $H_1$.
+\end{corollary}
+\begin{proof}
+By injectivity, an entry $P(j/k)$ equals $t$ exactly when $j/k=a/b$.
+Then $bj=ak$, and coprimality of $a,b$ implies $b\mid k$. Writing
+$k=mb$ forces $j=ma$. Conversely those choices give $j/k=a/b$, with
+$1\le j<k$. Thus there is exactly one such column in each row whose
+index is a positive multiple of $b$, proving the count and infinitude.
+No fraction $j/k$ with $1\le j<k$ is $1$, so no such row contains $P(1)$.
+\end{proof}
+
+The comment in A371353, revision 4, asserts:
+``Every prime occurs exactly once, and every composite occurs infinitely many times.''
+Its prime-occurrence assertion is false for
+these rows: $2=P(1/2)$ occurs in $H_2$, $H_4$, $H_6$, and every even
+row. The composite-occurrence part of that comment is true, and the
+corollary strengthens it to every integer $t\ge2$. Also,
+$P(2/5)=10$, as the list $U_4$ in A371279 shows; thus the second entry
+of the displayed fifth row in A371353 is $10$, not $19$. Its flattened
+sequence data already use $10$. The example describing positions of
+$1/6,2/6,\ldots,5/6$ belongs to row $6$, not row $5$.
+The displayed program stops at $U_4$, with only $20$ positions, so it
+cannot supply the entries $32$ and $63$ in the later displayed rows;
+the full rows are defined by \eqref{eq:rows}.
+
+\section{Linked unary-closure statements}
+In A226080, items (1) and (9), the generated set is the least set
+containing $1$ and closed under the stated unary maps.
+These are earlier results, not additional conjectures.
+
+\begin{corollary}[Kimberling--Moses]\label{cor:unary}
+For every positive integer $c$, the least set containing $1$ and closed
+under $z\mapsto z+1$ and $z\mapsto c/z$ is $\Q_{>0}$.
+The least set containing $1$ and closed under $z\mapsto1/z$ and
+$z\mapsto1/(1+z)$ is also $\Q_{>0}$.
+\end{corollary}
+\begin{proof}
+For the first assertion all generated numbers are positive rationals,
+and all positive integers are generated. Induct on the reduced
+denominator $q$. If $0<p<q$, the fraction $cq/p$ has reduced
+denominator at most $p<q$, so it is generated by induction;
+applying $c/z$ gives $p/q$. For $p>q$, write $p=mq+r$ with
+$0\le r<q$. If $r=0$ the fraction is an integer; otherwise the
+preceding case supplies $r/q$, and $m$ additions of $1$ give $p/q$.
+This proves the first assertion, including $c=1$.
+
+For the second assertion, write $I(z)=1/z$ and $R(z)=1/(1+z)$.
+The identity $I(R(z))=z+1$ shows that its closure contains the
+first closure with $c=1$; positivity and rationality give the reverse
+inclusion. These arguments reprove
+\cite[Theorem 3.3 and Example 3.5]{trees}.
+\end{proof}
+
+Thus A226080(1) and (9), and the guide's positive-rational rules
+$(1,z+1,c/z)$ for $c=2,3,4$, follow with their earlier attribution.
+No statement about their generation sizes or positions follows from
+equality of the generated sets alone.
+
+\section{Coverage and verification}
+\begin{center}
+\small
+\begin{tabular}{@{}p{.25\linewidth}p{.67\linewidth}@{}}
+\toprule
+Source item & Mathematical coverage \\
+\midrule
+A371279/80, second Comments line & Proved by Theorem~\ref{thm:main},
+with the exact order and reduced coordinates; Kepler-tree coverage is prior
+\cite{smolinsky,dekking}. \\
+A371279/80, first Comments line & Ordered update proved; sizes through
+$U_6$ checked. The reported $|U_7|=1032578826$ is not covered. \\
+Generation minimum and depth & Not posed; proved by Theorem~\ref{thm:main}
+and Corollary~\ref{cor:depth}; the digit-sum bound applies the prior
+Kepler path-length lemma \cite{minkowski}. \\
+BMO 2004/5, Problem 5 & Answered: yes; prior proofs include
+\cite[Solution 14]{saha} and the Kepler-tree proof \cite[Theorem 6.2]{recent}.
+Their unary coverage is applied to the ordered binary construction here. \\
+A371353, Comments & Prime assertion refuted-and-corrected; composite assertion
+proved by Corollary~\ref{cor:positions}, which gives exact multiplicities. \\
+A371353, Examples and program & Fifth-row entry $19\to10$, row label
+$5\to6$ corrected; finite-prefix and first-row conventions stated above. \\
+A226080, (1), (9), guide $c=2,3,4$ & Reproved; prior proof Kimberling--Moses,
+2014, Theorem 3.3 and Example 3.5; Corollary~\ref{cor:unary}. \\
+A226080, (2)--(8) & Prior generation-size proof: \cite[Theorem 3.2, $c=1$]{trees}
+for (2)--(3). Fibonacci, Lucas, Wythoff positions and word assertions
+(4)--(8) are not covered. \\
+A226080, other guide rules & Prior examples in \cite[Sections 2--6]{trees};
+their integer, signed, Gaussian and other rule variants are not covered here. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The Lean declaration
+\texttt{D5.S3.Arith.CounterSequences.}\allowbreak\texttt{KimberlingA371279.result}
+in the \href{https://github.com/the-omega-institute/trureturing/blob/f3466406d8191001830cf15e84db4578d4891435/D5/S3/Arith/CounterSequences/KimberlingA371279.lean}{pinned \texttt{KimberlingA371279.lean} source}
+formalizes first-occurrence updating, concatenation of generation blocks,
+the interval condition, unique generation-and-position occurrence, stable
+flattening, injectivity, and reduced numerator/denominator coordinates.
+Its \texttt{cumulative n} means $U_{n+1}$; its fraction index starts at $0$,
+whereas the generation and position pair in \texttt{Occurs} starts at $1$.
+The auxiliary declaration \texttt{coverage\_q} gives
+$p/q\in U_{q+1}$, one generation weaker than \eqref{eq:bound}.
+The denominator bound, exact minima, Corollaries~\ref{cor:depth},
+\ref{cor:positions}, and \ref{cor:unary} have written proofs above;
+they are not conclusions of the linked \texttt{result} declaration.
+
+The accompanying \texttt{verify.py} provides exact rational-arithmetic
+checks of finite prefixes, descent expressions, minima, unary identities,
+and position rows; its
+range and results are specified in \texttt{checks.json}. These finite
+checks supplement the proofs. The source archive contains the LaTeX,
+the checker, its output, and build instructions.
+
+\begin{thebibliography}{99}
+\bibitem{bmo} British Mathematical Olympiad, Round 1, 2004/5
+(1 December 2004), Problem 5.
+\url{https://bmos.ukmt.org.uk/home/bmo1-2005.pdf}.
+\bibitem{smolinsky} L. Smolinsky, \emph{Features of a high school olympiad
+problem}, arXiv:1602.08028v2 (28 February 2016), Sections 5--6.
+\url{https://arxiv.org/abs/1602.08028v2}.
+\bibitem{dekking} M. Dekking, \emph{Substitution invariant Sturmian words
+and binary trees}, arXiv:1705.08607v1 (24 May 2017), Section 2.1.
+\url{https://arxiv.org/abs/1705.08607v1}.
+\bibitem{minkowski} K. Dajani, M. R. de Lepper and E. A. Robinson Jr.,
+\emph{Introducing Minkowski normality}, arXiv:1902.10373v1
+(27 February 2019), Section 3, Lemma 3.1.
+\url{https://arxiv.org/abs/1902.10373v1}.
+\bibitem{saha} J. P. Saha, \emph{IMOTC 2025}, notes dated 17 May 2025,
+Exercise 6.4 and Solution 14, pp.~16--18.
+\url{https://jpsaha.github.io/assets/pdf/IMOTC/IMOTC25Alg.pdf}.
+\bibitem{recent} J. Grytczuk, A. P. Kisielewicz and K. Przes{\l}awski,
+\emph{Cube tilings, partition counters, and the Calkin--Wilf and Kepler trees},
+arXiv:2611.12239v1 (9 November 2026), Theorem 6.2, p.~11.
+\url{https://arxiv.org/abs/2611.12239v1}.
+\bibitem{num} C. Kimberling, OEIS A371279, Comments and Examples,
+revision 11 (22 December 2025); entry dated 18 March 2024.
+\url{https://oeis.org/A371279}.
+\bibitem{den} C. Kimberling, OEIS A371280, Comments and Examples,
+revision 10 (22 December 2025); entry dated 18 March 2024.
+\url{https://oeis.org/A371280}.
+\bibitem{positions} C. Kimberling, OEIS A371353, Comments, Examples,
+and program, revision 4 (22 March 2024); entry dated 19 March 2024.
+\url{https://oeis.org/A371353}.
+\bibitem{trees} C. Kimberling and P. J. C. Moses,
+The infinite Fibonacci tree and other trees generated by rules,
+\emph{The Fibonacci Quarterly} \textbf{52}, no.~5 (2014), 136--150.
+\href{https://doi.org/10.1080/00150517.2014.12427864}{doi:10.1080/00150517.2014.12427864}.
+\bibitem{rabbit} C. Kimberling, OEIS A226080, Comments, items (1)--(9),
+revision 80 (5 November 2026).
+\url{https://oeis.org/A226080}.
+\end{thebibliography}
+
+\bigskip\noindent\small
+\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0).
+\end{document}

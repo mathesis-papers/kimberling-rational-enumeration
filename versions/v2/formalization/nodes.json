@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:kimberling-rational-enumeration:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "f3466406d8191001830cf15e84db4578d4891435",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/f3466406d8191001830cf15e84db4578d4891435/D5/S3/Arith/CounterSequences/KimberlingA371279.lean"
+      },
+      "lineage": "collected:kimberling-rational-enumeration:s1",
+      "macros": {
+        "\\N": "\\mathbb{N}",
+        "\\Q": "\\mathbb{Q}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "kimberling-rational-enumeration",
+      "scope": "in_scope",
+      "statement": "Every entry of every $U_n$ is a rational in $(0,1]$, and $U_n$ is a\nduplicate-free prefix of $U_{n+1}$. For all integers $1\\le p\\le q$,\n\\begin{equation}\n p/q\\in U_q.\n\\end{equation}\nThe minimum of $U_n$ is $2^{1-n}$, and every generation is nonempty.\nConsequently the infinite concatenation\n$g_1\\Vert g_2\\Vert\\cdots$ is a bijective enumeration of $\\Q\\cap(0,1]$.\nIts reduced numerator and denominator lists are the constructions in\nA371279 and A371280, respectively.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma",
+      "toolchain": null,
+      "version": 2,
+      "work": "kimberling-rational-enumeration"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:kimberling-rational-enumeration:2:s2",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "f3466406d8191001830cf15e84db4578d4891435",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/f3466406d8191001830cf15e84db4578d4891435/D5/S3/Arith/CounterSequences/KimberlingA371279.lean"
+      },
+      "lineage": "collected:kimberling-rational-enumeration:s2",
+      "macros": {
+        "\\N": "\\mathbb{N}",
+        "\\Q": "\\mathbb{Q}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "kimberling-rational-enumeration",
+      "scope": "in_scope",
+      "statement": "Let $h(r)$ be the first generation containing $r\\in\\Q\\cap(0,1]$.\nFor integers $1\\le p\\le q$,\n\\[\n 2^{h(p/q)-1}\\ge q/p,\\qquad h(p/q)\\le q.\n\\]\nIn particular $h(2^{-k})=k+1$ for every integer $k\\ge0$.\nIf $0<p<q$ is reduced and\n$p/q=[0;a_1,\\ldots,a_s]$ is its finite simple continued fraction,\nwith $a_i\\ge1$ and $a_s\\ge2$, then\n\\[\n h(p/q)\\le a_1+\\cdots+a_s.\n\\]",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma",
+      "toolchain": null,
+      "version": 2,
+      "work": "kimberling-rational-enumeration"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:kimberling-rational-enumeration:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "f3466406d8191001830cf15e84db4578d4891435",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/f3466406d8191001830cf15e84db4578d4891435/D5/S3/Arith/CounterSequences/KimberlingA371279.lean"
+      },
+      "lineage": "collected:kimberling-rational-enumeration:s3",
+      "macros": {
+        "\\N": "\\mathbb{N}",
+        "\\Q": "\\mathbb{Q}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "kimberling-rational-enumeration",
+      "scope": "in_scope",
+      "statement": "Let $t\\ge2$, and write $f_t=a/b$ in lowest terms, so $1\\le a<b$.\nThe integer $t$ occurs exactly once in $H_k$ if $b$ divides $k$, and\ndoes not occur in $H_k$ otherwise. Its column in $H_{mb}$ is $ma$.\nIt therefore occurs $\\lfloor K/b\\rfloor$ times among $H_1,\\ldots,H_K$,\nand infinitely many times in the whole array. The value $1$ occurs\nonly in the exceptional row $H_1$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma",
+      "toolchain": null,
+      "version": 2,
+      "work": "kimberling-rational-enumeration"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:kimberling-rational-enumeration:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "f3466406d8191001830cf15e84db4578d4891435",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/f3466406d8191001830cf15e84db4578d4891435/D5/S3/Arith/CounterSequences/KimberlingA371279.lean"
+      },
+      "lineage": "collected:kimberling-rational-enumeration:s4",
+      "macros": {
+        "\\N": "\\mathbb{N}",
+        "\\Q": "\\mathbb{Q}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "kimberling-rational-enumeration",
+      "scope": "in_scope",
+      "statement": "For every positive integer $c$, the least set containing $1$ and closed\nunder $z\\mapsto z+1$ and $z\\mapsto c/z$ is $\\Q_{>0}$.\nThe least set containing $1$ and closed under $z\\mapsto1/z$ and\n$z\\mapsto1/(1+z)$ is also $\\Q_{>0}$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma",
+      "toolchain": null,
+      "version": 2,
+      "work": "kimberling-rational-enumeration"
+    }
+  ]
+}

@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24489053",
     "current_version": 2,
     "doi": "10.5281/zenodo.24489054",
+    "kind": "note",
     "lean_source": {
       "revision": "f3466406d8191001830cf15e84db4578d4891435",
       "url": "https://github.com/the-omega-institute/trureturing/blob/f3466406d8191001830cf15e84db4578d4891435/D5/S3/Arith/CounterSequences/KimberlingA371279.lean"
@@ -55,10 +56,12 @@
     "title": "Kimberling's rational-enumeration conjecture: an extension of the BMO–Kepler closure lemma",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-24T03:36:46.225133737Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "kimberling-rational-enumeration"
